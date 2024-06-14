@@ -1,5 +1,10 @@
 <script>
+import HeaderSearch from './HeaderSearch.vue'
+
 export default {
+    components:{
+        HeaderSearch,
+    },
   data() {
     return {
       
@@ -10,7 +15,7 @@ export default {
 
 <template>
     <h1>
-        Header
+        <HeaderSearch />
     </h1>
 </template>
 
