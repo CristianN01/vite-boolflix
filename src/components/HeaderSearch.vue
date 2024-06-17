@@ -11,7 +11,7 @@ export default {
   },
   methods: {
       getFilms(){
-            axios.get('https://api.themoviedb.org/3/search/movie?api_key=29f42ebaba6771b07ad5be78ceeaf393&query=' + this.store.searchFilm)
+            axios.get('https://api.themoviedb.org/3/search/movie?api_key=29f42ebaba6771b07ad5be78ceeaf393&query=' + this.store.search)
             .then( (response) => {
                 // handle success
                 console.log(response.data.results);
@@ -25,14 +25,30 @@ export default {
                 // always executed
             });
         },
+
+        getTvSeries(){
+            axios.get('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=' + this.store.search)
+            .then( (response) => {
+                // handle success
+                console.log(response.data.results);
+                 this.store.series = response.data.results;
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                // always executed
+            });
+        }
     },
 
 }
 </script>
 
 <template>
-   <input type="text" placeholder="Cerca un film" v-model="this.store.searchFilm">
-   <button @click="getFilms()">cerca</button>
+   <input type="text" placeholder="Cerca un film/Serie" v-model="this.store.search" >
+   <button @click="getFilms() + getTvSeries()">cerca</button>
 </template>
 
 <style lang="scss" scoped>
