@@ -21,7 +21,7 @@ export default {
             <h4>Lingua originale:
                 <img class="lang-icon" :class="'lang-icon-' + film.original_language" src="" alt="">
             </h4>
-            <h3>Voto: <span>{{ film.vote_count }}</span></h3>
+            <h3>Voto: <span>{{ (Math.floor(film.vote_average / 2)) }}</span></h3>
         </section>
     
         <section class="tv-series" v-for="series in store.series">
@@ -31,11 +31,8 @@ export default {
             <h4>Lingua originale:
                 <img class="flag lang-icon" :class="'lang-icon-' + series.original_language" src="" alt="">
             </h4>
-            <h3>Voto: <span>{{ series.vote_average }}</span></h3>
-        </section>
-    
-        
-        
+            <h3>Voto: <span>{{ (Math.floor(series.vote_average / 2)) }}</span></h3>
+        </section> 
     </article>
     
 
@@ -53,10 +50,24 @@ export default {
             vertical-align: middle
         }
 
-        li {
-            border: 2px solid black;
-            margin-top: 1rem;
-            list-style-type: none;
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #141414;
+
+            .film {
+                width: calc(100% / 5);
+                margin-bottom: 3rem;
+                color: white;
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                h2 {
+                    font-size: 1rem;
+                }
+            }
         }
     
 
@@ -64,7 +75,7 @@ export default {
         margin-top: 3rem;
     }
 
-    .lang-icon {
-    background-image: url(../lang-flags.png);
-    }
+    // .lang-icon {
+    // background-image: url(../lang-flags.png);
+    // }
 </style>

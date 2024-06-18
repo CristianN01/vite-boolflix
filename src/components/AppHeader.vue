@@ -14,11 +14,18 @@ export default {
 </script>
 
 <template>
-    <h1>
+    <header>
         <HeaderSearch />
-    </h1>
+    </header>
+
+    
 </template>
 
 <style lang="scss" scoped>
+
+    header {
+        background-color: #0c0c0c;
+        padding: 2rem;
+    }
 
 </style>
