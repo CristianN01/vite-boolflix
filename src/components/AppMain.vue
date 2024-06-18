@@ -53,7 +53,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/general.scss' as *;
 @use '../../node_modules/@textabledev/langs-flags-list/lang-flags.css' as *;
 @use '../../node_modules/@fortawesome/fontawesome-free/css/all.css' as *;
 

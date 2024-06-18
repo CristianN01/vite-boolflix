@@ -48,9 +48,12 @@ export default {
 
 <template>
     <section class="nav">
-        <h1>
-            BOOLFLIX
-        </h1>
+        <div class="boolflix">
+            <img class="profile" src="../../src/img/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg" alt="">
+            <h1>
+                BOOLFLIX
+            </h1>
+        </div>
         <div class="search">
             <input type="text" placeholder="Cerca un film/Serie" v-model="this.store.search" >
             <button @click="getFilms() + getTvSeries()">cerca</button>
@@ -62,14 +65,51 @@ export default {
 
 <style lang="scss" scoped>
 
+.boolflix {
+    display: flex;
+    margin: 0;
+    justify-content: baseline;
+
+    img,
+    h1 {
+        margin: 0;
+        align-self: center;
+        color: #e50914;
+        font-size: 30px;
+        margin-left: 2rem;
+    }
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    h1 {
-        color: red;
-        font-size: 30px;
+    .profile {
+        width: 5%;
+        border-radius: 10px;
+        justify-content: center;
+    }
+}
+
+.search {
+
+    input {
+        border-radius: 10px;
+        border-color: #e50914;
+        margin-right: 2rem;
+        width: 20rem;
+        padding: 0.25rem;
+        background-color: rgba(0, 0, 0, 0.292);
+        color: white;
+    }
+
+    button {
+        border-radius: 10px;
+        padding: 0.25rem 1rem;
+        color: white;
+        background-color: #141414;
+        border-color: #e50914;
     }
 }
 
