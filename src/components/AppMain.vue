@@ -53,6 +53,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/general.scss' as *;
 @use '../../node_modules/@textabledev/langs-flags-list/lang-flags.css' as *;
 @use '../../node_modules/@fortawesome/fontawesome-free/css/all.css' as *;
 
@@ -75,11 +76,12 @@ export default {
 
             .film,
             .tv-series {
-                width: calc((100% / 5) - 0.20rem);
+                width: calc((100% / 5) - 1rem);
                 margin-bottom: 3rem;
                 color: white;
                 height: 500px;
-                margin-left: 0.20rem;
+                margin-left: 1rem;
+                margin-top: 1rem;
 
                 h1 {
                     font-size: 1.5rem;

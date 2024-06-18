@@ -1,6 +1,12 @@
 @use "@fontsource/roboto"; // Defaults to weight 400
 
 
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family:'Roboto';
 }

@@ -47,10 +47,30 @@ export default {
 </script>
 
 <template>
-   <input type="text" placeholder="Cerca un film/Serie" v-model="this.store.search" >
-   <button @click="getFilms() + getTvSeries()">cerca</button>
+    <section class="nav">
+        <h1>
+            BOOLFLIX
+        </h1>
+        <div class="search">
+            <input type="text" placeholder="Cerca un film/Serie" v-model="this.store.search" >
+            <button @click="getFilms() + getTvSeries()">cerca</button>
+        </div>
+    </section>
 </template>
 
+
+
 <style lang="scss" scoped>
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        color: red;
+        font-size: 30px;
+    }
+}
 
 </style>
