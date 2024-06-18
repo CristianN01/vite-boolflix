@@ -12,31 +12,46 @@ export default {
 </script>
 
 <template>
-    <section class="film">
-        <ul>
-            <li v-for="film in store.films">
-                <h1>Films</h1>
-                Titolo :{{ film.title }}
-                Titolo originale :{{ film.original_title }}
-                Lingua :{{ film.original_language }}
-                Voto :{{ film.vote_count }}
-            </li>
-        </ul>
-    </section>
-    <section class="tv-series">
-        <ul>
-            <li v-for="series in store.series">
-                <h1>Tv-Series</h1>
-                Titolo: {{ series.name }}
-                Titolo originale: {{ series.original_name }}
-                Lingua: {{ series.original_language }}
-                Voto: {{ series.vote_average }}
-            </li>
-        </ul>
-    </section>
+    <article>
+                        <!-- info -->
+        <section class="film" v-for="film in store.films">
+            <img :src="'https://image.tmdb.org/t/p/' + 'w342/' + film.poster_path" alt="">
+            <h1>Titolo: <span>{{ film.title }}</span></h1>
+            <h2>Titolo originale: <span>{{ film.original_title }}</span></h2>
+            <h4>Lingua originale:
+                <img class="lang-icon" :class="'lang-icon-' + film.original_language" src="" alt="">
+            </h4>
+            <h3>Voto: <span>{{ film.vote_count }}</span></h3>
+        </section>
+    
+        <section class="tv-series" v-for="series in store.series">
+            <img :src="'https://image.tmdb.org/t/p/' + 'w342/' + series.poster_path" alt="">
+            <h1>Titolo: <span>{{ series.name}}</span></h1>
+            <h2>Titolo originale: <span>{{ series.original_name }}</span></h2>
+            <h4>Lingua originale:
+                <img class="flag lang-icon" :class="'lang-icon-' + series.original_language" src="" alt="">
+            </h4>
+            <h3>Voto: <span>{{ series.vote_average }}</span></h3>
+        </section>
+    
+        
+        
+    </article>
+    
+
+
 </template>
 
 <style lang="scss" scoped>
+@use '../../node_modules/@textabledev/langs-flags-list/lang-flags.css' as *;
+
+        .lang-icon {
+            background-image: url(../../node_modules/@textabledev/langs-flags-list/lang-flags.png);
+        }
+
+        .flag{
+            vertical-align: middle
+        }
 
         li {
             border: 2px solid black;
@@ -47,5 +62,9 @@ export default {
 
     .tv-series {
         margin-top: 3rem;
+    }
+
+    .lang-icon {
+    background-image: url(../lang-flags.png);
     }
 </style>
