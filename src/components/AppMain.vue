@@ -29,6 +29,7 @@ export default {
                     <img class="lang-icon" :class="'lang-icon-' + film.original_language" src="" alt="">
                 </h4>
                 <h3>Voto: <span>{{ (Math.floor(film.vote_average / 2)) }}</span></h3>
+                <p>Overview: <span>{{ film.overview }}</span></p>
             </div>
         </section>
 
@@ -43,6 +44,7 @@ export default {
                     <img class="flag lang-icon" :class="'lang-icon-' + series.original_language" src="" alt="">
                 </h4>
                 <h3>Voto: <span>{{ (Math.floor(series.vote_average / 2)) }}</span></h3>
+                <p>Overview: <span>{{ series.overview }}</span></p>
             </div>
         </section> 
     </article>
@@ -62,6 +64,11 @@ export default {
 
         .flag{
             vertical-align: middle
+        }
+
+        .image-poster {
+            height: 30rem;
+            width: 20rem;
         }
 
         .placeholder {
@@ -84,10 +91,17 @@ export default {
 
                 h1 {
                     font-size: 1.5rem;
+                    margin-right: 3rem;
                 }
 
                 h2 {
                     font-size: 1rem;
+                    margin-right: 3rem;
+                }
+
+                p {
+                    font-size: 15px;
+                    margin-right: 3rem;
                 }
             }
         }
@@ -112,6 +126,8 @@ export default {
                     display: inline;
                     position: relative;
                     bottom: 450px;
+                    left: 5px;
+                    
                     
                 }
             }
